@@ -50,16 +50,16 @@ module "web_to_order_contract" {
   filter_map = var.web_to_order_filter_map
 }
 
+module "payment_to_store_contract" {
+  source = "./modules/create_contract"
+
+  tenant_id  = aci_tenant.mig_app_centric.id
+  filter_map = var.payment_to_store_filter_map
+}
+
 module "order_to_payment_contract" {
   source = "./modules/create_contract"
 
   tenant_id  = aci_tenant.mig_app_centric.id
   filter_map = var.order_to_payment_filter_map
-}
-
-module "payment_to_store_contract" {
-  source = "/home/nvermand/lab_share/nvermand/terraform/modules/create_contract"
-
-  tenant_id  = aci_tenant.mig_app_centric.id
-  filter_map = var.payment_to_store_filter_map
 }
