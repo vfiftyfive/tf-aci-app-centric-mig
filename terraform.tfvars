@@ -25,7 +25,7 @@ web_to_order_filter_map = {
         name = "web_to_order_https_filter"
         entry_1 = {
           d_from_port = "443"
-          d_from_port = "443"
+          d_to_port   = "443"
           ether_t     = "ip"
           prot        = "tcp"
         }
@@ -42,7 +42,7 @@ order_to_payment_filter_map = {
         name = "order_to_payment_https_filter"
         entry_1 = {
           d_from_port = "443"
-          d_from_port = "443"
+          d_to_port   = "443"
           ether_t     = "ip"
           prot        = "tcp"
         }
@@ -59,7 +59,7 @@ payment_to_store_filter_map = {
         name = "payment_to_store_mongodb_filter"
         entry_1 = {
           d_from_port = "27017"
-          d_from_port = "27017"
+          d_to_port   = "27017"
           ether_t     = "ip"
           prot        = "tcp"
         }
