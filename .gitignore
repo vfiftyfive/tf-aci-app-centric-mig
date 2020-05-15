@@ -1,0 +1,6 @@
+.terraform
+*.tfstate*
+import.sh
+tfstate.json
+dmz_api_user.crt
+api_user.pem
