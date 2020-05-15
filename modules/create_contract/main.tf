@@ -11,7 +11,7 @@ resource "aci_filter" "module_filter" {
 resource "aci_contract_subject" "module_subject" {
   contract_dn                  = aci_contract.module_contract.id
   name                         = var.filter_map.contract_object.subject_name
-  relation_vz_rs_subj_filt_att = [aci_filter.module_filter.id]
+  relation_vz_rs_subj_filt_att = [aci_filter.module_filter.name]
 }
 
 resource "aci_filter_entry" "all_module_filter_entries" {
