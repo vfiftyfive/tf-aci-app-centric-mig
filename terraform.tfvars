@@ -1,8 +1,6 @@
 username        = "api_user"
-aci_private_key = "dmz_api_user.crt"
+aci_private_key = "api_user.pem"
 aci_cert_name   = "api_user_cert"
-apic_url        = "https://10.51.48.78"
-password        = "ins3965!"
 tenant_name     = "mytenant"
 vrf             = "PROD_VRF"
 all_bds = {

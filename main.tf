@@ -44,14 +44,14 @@ data "aci_vmm_domain" "vmware_vds" {
 }
 
 module "web_to_order_contract" {
-  source = "/home/nvermand/lab_share/nvermand/terraform/modules/create_contract"
+  source = "./modules/create_contract"
 
   tenant_id  = aci_tenant.mig_app_centric.id
   filter_map = var.web_to_order_filter_map
 }
 
 module "order_to_payment_contract" {
-  source = "/home/nvermand/lab_share/nvermand/terraform/modules/create_contract"
+  source = "./modules/create_contract"
 
   tenant_id  = aci_tenant.mig_app_centric.id
   filter_map = var.order_to_payment_filter_map
