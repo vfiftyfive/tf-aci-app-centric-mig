@@ -1,0 +1,4 @@
+.terraform
+.tfstate*
+import.sh
+tfstate.json
