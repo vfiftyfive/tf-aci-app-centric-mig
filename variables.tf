@@ -5,7 +5,9 @@ variable "aci_cert_name" {}
 variable "apic_url" {}
 variable "tenant_name" {}
 variable "all_bds" {
-  type = map(string)
+  type = map(object({
+    ip = string
+  }))
 }
 variable "all_epgs" {
   type = map(string)
@@ -14,7 +16,7 @@ variable epg_external {}
 variable l3out {}
 variable common_vrf {}
 variable "vds_name" {}
-variable "web_to_order_filter_map" {
+variable "web_to_order_contract" {
   type = map(object({
     contract_name = string
     subject_name  = string
@@ -24,7 +26,7 @@ variable "web_to_order_filter_map" {
       })
   ) }))
 }
-variable "order_to_payment_filter_map" {
+variable "order_to_payment_contract" {
   type = map(object({
     contract_name = string
     subject_name  = string
@@ -34,7 +36,7 @@ variable "order_to_payment_filter_map" {
       })
   ) }))
 }
-variable "payment_to_store_filter_map" {
+variable "payment_to_store_contract" {
   type = map(object({
     contract_name = string
     subject_name  = string
@@ -44,4 +46,5 @@ variable "payment_to_store_filter_map" {
       })
   ) }))
 }
+
 

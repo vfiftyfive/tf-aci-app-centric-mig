@@ -1,5 +1,5 @@
 variable tenant_id {}
-variable "filter_map" {
+variable "contract" {
   type = map(object({
     contract_name = string
     subject_name  = string
@@ -9,3 +9,4 @@ variable "filter_map" {
     })
   )}))
 }
+variable "anp" {}
