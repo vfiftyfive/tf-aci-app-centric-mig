@@ -5,8 +5,6 @@ locals {
   l3out         = "default"
 }
 
-
-
 provider "aci" {
   username = var.username
   # private_key = var.aci_private_key
