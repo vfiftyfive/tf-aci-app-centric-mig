@@ -66,10 +66,10 @@ data "aci_l3_outside" "l3out" {
 }
 
 resource aci_rest "relation_ctrct_to_ext_epg" {
-    path       = "/api/node/mo/uni/tn-${var.common_vrf}/out-${var.l3out}/instP-${var.epg_external}.json"
+    path       = "/api/node/mo/uni/tn-common/out-${var.l3out}/instP-${var.epg_external}/rscons-${module.web_to_order.contract_name}.json"
     class_name = "fvRsCons"
     content = {
-    tDn = "uni/tn-${var.common_vrf}/brc-${module.web_to_order.contract_name}"
+        tnVzBrCPName = module.web_to_order.contract_name
     }
 }
 
