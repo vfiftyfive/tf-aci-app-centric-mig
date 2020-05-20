@@ -65,10 +65,17 @@ data "aci_l3_outside" "l3out" {
     name      = var.l3out
 }
 
-resource "aci_external_network_instance_profile" "default-ext-epg" {
+data "aci_external_network_instance_profile" "default-ext-epg" {
     l3_outside_dn = data.aci_l3_outside.l3out.id
     name          = var.epg_external
-    relation_fv_rs_cons = [ module.web_to_order.contract_name ]
+}
+
+resource aci_rest "relation_ctrct_to_ext_epg" {
+    path       = "/api/node/mo/uni/tn-${var.common_vrf}.json"
+    class_name = "fvRsCons"
+    content = {
+    tDn = "uni/tn-${var.common_vrf}/brc-${module.web_to_order.contract_name}"
+    }
 }
 
 data "aci_vmm_domain" "vmware_vds" {
