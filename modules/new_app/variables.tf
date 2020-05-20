@@ -4,7 +4,6 @@ variable "app_bds" {
         ip = string
     }))
 }
-variable "app_single_bd" {}
 variable "app_subnet" {}
 variable "app_epgs" {
     type = map(string)

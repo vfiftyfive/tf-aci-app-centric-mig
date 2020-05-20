@@ -3,7 +3,6 @@ locals {
   tenant_name   = "mytenant"
   common_vrf    = "default"
   l3out         = "default"
-  app_single_bd = "app_centric_bd"
   app_subnet    = "10.15.2.1/16"
 }
 
