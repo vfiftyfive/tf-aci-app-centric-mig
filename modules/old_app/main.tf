@@ -19,12 +19,12 @@ locals {
     }
 }
 
-resource "aci_tenant" "mig_app_centric" {
+data "aci_tenant" "mig_app_centric" {
     name = var.tenant_name
 }
 
 resource "aci_application_profile" "old_app" {
-    tenant_dn = aci_tenant.mig_app_centric.id
+    tenant_dn = data.aci_tenant.mig_app_centric.id
     name      = "old_app"
 }
 
@@ -35,7 +35,7 @@ data "aci_vrf" "common_vrf" {
 
 resource "aci_bridge_domain" "app_bds" {
     for_each           = var.app_bds
-    tenant_dn          = aci_tenant.mig_app_centric.id
+    tenant_dn          = data.aci_tenant.mig_app_centric.id
     name               = each.key
     relation_fv_rs_ctx = data.aci_vrf.common_vrf.name
 }
