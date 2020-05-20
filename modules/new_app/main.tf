@@ -71,7 +71,7 @@ data "aci_external_network_instance_profile" "default_ext_epg" {
 }
 
 resource aci_rest "relation_ctrct_to_ext_epg" {
-    path       = "/api/node/mo/uni/tn-${var.common_vrf}/out-${data.aci_l3_outside.l3out}/instP-${data.aci_external_network_instance_profile.default_ext_epg}.json"
+    path       = "/api/node/mo/uni/tn-${var.common_vrf}/out-${var.l3out}/instP-${var.epg_external}.json"
     class_name = "fvRsCons"
     content = {
     tDn = "uni/tn-${var.common_vrf}/brc-${module.web_to_order.contract_name}"
