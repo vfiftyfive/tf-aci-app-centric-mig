@@ -65,12 +65,6 @@ data "aci_l3_outside" "l3out" {
     name      = var.l3out
 }
 
-data "aci_external_network_instance_profile" "default_ext_epg" {
-    l3_outside_dn = data.aci_l3_outside.l3out.id
-    name          = var.epg_external
-    
-}
-
 resource aci_rest "relation_ctrct_to_ext_epg" {
     path       = "/api/node/mo/uni/tn-${var.common_vrf}/out-${var.l3out}/instP-${var.epg_external}.json"
     class_name = "fvRsCons"
