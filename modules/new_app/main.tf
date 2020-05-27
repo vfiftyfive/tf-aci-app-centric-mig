@@ -101,3 +101,7 @@ module "order_to_payment" {
     tenant_id = data.aci_tenant.common_tenant.id
     contract  = var.order_to_payment_contract
     }
+
+output "epgs" {
+    value = aci_application_profile.app_epgs
+}

@@ -70,3 +70,20 @@ payment_to_store_contract = {
     }
   }
 }
+vsphere_user            = "administrator@vsphere.local"
+vsphere_server          = "nvermand-vc-05.uktme.cisco.com"
+vsphere_datacenter      = "uktme-01"
+vsphere_compute_cluster = "nv-cl01"
+vsphere_template        = "test-vm"
+vsphere_datastore       = "vsanDatastore-cl01"
+vm_prefix               = "devnet-vm-"
+vcpu                    = "2"
+memory                  = "1024"
+folder                  = "ACI"
+domain_name             = "uktme.cisco.com"
+vm_cidr                 = "192.168.14.0/24"
+gateway                 = "192.168.14.1"
+dns_domain              = "uktme.cisco.com"
+dns_search              = ["uktme.cisco.com"]
+dns_list                = ["10.237.97.134", "10.237.97.135"]
+vm_ip_address_start     = "10"

@@ -43,3 +43,21 @@ variable "payment_to_store_contract" {
       })
   ) }))
 }
+variable "vsphere_user" {}
+variable "vsphere_password" {}
+variable "vsphere_server" {}
+variable "vsphere_datacenter" {}
+variable "vsphere_datastore" {}
+variable "vsphere_compute_cluster" {}
+variable "vsphere_template" {}
+variable "vcpu" {}
+variable "memory" {}
+variable "folder" {}
+variable "domain_name" {}
+variable "gateway" {}
+variable "vm_ip_address_start" {}
+variable "vm_cidr" {}
+variable "vm_prefix" {}
+variable "dns_list" {}
+variable "dns_search" {}
+variable "dns_domain" {}
